@@ -1,0 +1,5 @@
+../my_libs/motor.c:13:6:motor_init	12
+../my_libs/motor.c:97:6:motor_start	6
+../my_libs/motor.c:128:6:motor_set_speed	4
+../my_libs/motor.c:150:6:motor_set_dir	3
+../my_libs/motor.c:162:6:motor_stop	4

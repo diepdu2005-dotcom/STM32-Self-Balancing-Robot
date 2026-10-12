@@ -1,0 +1,3 @@
+../Core/Src/MPU6050.c:46:6:MPU6050_Init	32	static
+../Core/Src/MPU6050.c:85:6:MPU6050_Read_Data	48	static
+../Core/Src/MPU6050.c:144:6:MPU6050_Read_Angle	88	static

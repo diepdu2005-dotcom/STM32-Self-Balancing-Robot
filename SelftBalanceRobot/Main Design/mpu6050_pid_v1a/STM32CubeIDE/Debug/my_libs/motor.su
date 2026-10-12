@@ -1,0 +1,5 @@
+../my_libs/motor.c:12:6:motor_init	192	static
+../my_libs/motor.c:96:6:motor_start	16	static
+../my_libs/motor.c:127:6:motor_set_speed	16	static
+../my_libs/motor.c:149:6:motor_set_dir	16	static
+../my_libs/motor.c:161:6:motor_stop	16	static

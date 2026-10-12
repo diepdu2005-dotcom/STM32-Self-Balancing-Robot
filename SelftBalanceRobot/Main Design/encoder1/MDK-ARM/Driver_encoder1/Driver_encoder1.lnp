@@ -1,0 +1,23 @@
+--cpu Cortex-M3
+"driver_encoder1\startup_stm32f103xb.o"
+"driver_encoder1\main.o"
+"driver_encoder1\stm32f1xx_it.o"
+"driver_encoder1\stm32f1xx_hal_msp.o"
+"driver_encoder1\stm32f1xx_hal_gpio_ex.o"
+"driver_encoder1\stm32f1xx_hal_tim.o"
+"driver_encoder1\stm32f1xx_hal_tim_ex.o"
+"driver_encoder1\stm32f1xx_hal.o"
+"driver_encoder1\stm32f1xx_hal_rcc.o"
+"driver_encoder1\stm32f1xx_hal_rcc_ex.o"
+"driver_encoder1\stm32f1xx_hal_gpio.o"
+"driver_encoder1\stm32f1xx_hal_dma.o"
+"driver_encoder1\stm32f1xx_hal_cortex.o"
+"driver_encoder1\stm32f1xx_hal_pwr.o"
+"driver_encoder1\stm32f1xx_hal_flash.o"
+"driver_encoder1\stm32f1xx_hal_flash_ex.o"
+"driver_encoder1\stm32f1xx_hal_exti.o"
+"driver_encoder1\system_stm32f1xx.o"
+--strict --scatter "Driver_encoder1\Driver_encoder1.sct"
+--summary_stderr --info summarysizes --map --load_addr_map_info --xref --callgraph --symbols
+--info sizes --info totals --info unused --info veneers
+--list "Driver_encoder1.map" -o Driver_encoder1\Driver_encoder1.axf

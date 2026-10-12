@@ -1,0 +1,23 @@
+--cpu Cortex-M3
+"encoder_timer\startup_stm32f103xb.o"
+"encoder_timer\main.o"
+"encoder_timer\stm32f1xx_it.o"
+"encoder_timer\stm32f1xx_hal_msp.o"
+"encoder_timer\stm32f1xx_hal_gpio_ex.o"
+"encoder_timer\stm32f1xx_hal_tim.o"
+"encoder_timer\stm32f1xx_hal_tim_ex.o"
+"encoder_timer\stm32f1xx_hal.o"
+"encoder_timer\stm32f1xx_hal_rcc.o"
+"encoder_timer\stm32f1xx_hal_rcc_ex.o"
+"encoder_timer\stm32f1xx_hal_gpio.o"
+"encoder_timer\stm32f1xx_hal_dma.o"
+"encoder_timer\stm32f1xx_hal_cortex.o"
+"encoder_timer\stm32f1xx_hal_pwr.o"
+"encoder_timer\stm32f1xx_hal_flash.o"
+"encoder_timer\stm32f1xx_hal_flash_ex.o"
+"encoder_timer\stm32f1xx_hal_exti.o"
+"encoder_timer\system_stm32f1xx.o"
+--strict --scatter "ENCODER_TIMER\ENCODER_TIMER.sct"
+--summary_stderr --info summarysizes --map --load_addr_map_info --xref --callgraph --symbols
+--info sizes --info totals --info unused --info veneers
+--list "ENCODER_TIMER.map" -o ENCODER_TIMER\ENCODER_TIMER.axf

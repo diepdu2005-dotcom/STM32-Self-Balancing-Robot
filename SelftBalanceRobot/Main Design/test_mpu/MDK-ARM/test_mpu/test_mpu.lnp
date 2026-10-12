@@ -1,0 +1,25 @@
+--cpu Cortex-M3
+".\test_mpu\startup_stm32f103xb.o"
+".\test_mpu\main.o"
+".\test_mpu\stm32f1xx_it.o"
+".\test_mpu\stm32f1xx_hal_msp.o"
+".\test_mpu\mpu6050.o"
+".\test_mpu\stm32f1xx_hal_gpio_ex.o"
+".\test_mpu\stm32f1xx_hal_i2c.o"
+".\test_mpu\stm32f1xx_hal.o"
+".\test_mpu\stm32f1xx_hal_rcc.o"
+".\test_mpu\stm32f1xx_hal_rcc_ex.o"
+".\test_mpu\stm32f1xx_hal_gpio.o"
+".\test_mpu\stm32f1xx_hal_dma.o"
+".\test_mpu\stm32f1xx_hal_cortex.o"
+".\test_mpu\stm32f1xx_hal_pwr.o"
+".\test_mpu\stm32f1xx_hal_flash.o"
+".\test_mpu\stm32f1xx_hal_flash_ex.o"
+".\test_mpu\stm32f1xx_hal_exti.o"
+".\test_mpu\stm32f1xx_hal_tim.o"
+".\test_mpu\stm32f1xx_hal_tim_ex.o"
+".\test_mpu\system_stm32f1xx.o"
+--strict --scatter ".\test_mpu\test_mpu.sct"
+--summary_stderr --info summarysizes --map --load_addr_map_info --xref --callgraph --symbols
+--info sizes --info totals --info unused --info veneers
+--list "test_mpu.map" -o .\test_mpu\test_mpu.axf

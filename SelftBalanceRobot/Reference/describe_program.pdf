@@ -1,0 +1,77 @@
+\documentclass[12pt,a4paper]{article}
+\usepackage[utf8]{vietnam} % hỗ trợ tiếng Việt
+\usepackage[T5]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath}
+\usepackage{geometry}
+\usepackage{graphicx}
+\usepackage{enumitem}
+\geometry{margin=2.5cm}
+
+\begin{document}
+	
+	\begin{center}
+		{\Large \textbf{TÓM TẮT THUẬT TOÁN ROBOT TỰ CÂN BẰNG}}
+	\end{center}
+	
+	\vspace{0.5cm}
+	
+	\section*{1. Khởi tạo phần cứng}
+	\begin{itemize}[noitemsep]
+		\item Cấu hình \textbf{I2C} để đọc dữ liệu từ cảm biến \textbf{MPU6050}.
+		\item Cấu hình \textbf{Timer PWM} để điều khiển động cơ.
+		\item Cấu hình \textbf{GPIO} (IN1, IN2) để xác định chiều quay.
+	\end{itemize}
+	
+	\section*{2. Đọc dữ liệu cảm biến}
+	\[
+	\text{pitch} = 0.98 \times (\text{pitch}_{\text{trước}} + \text{gyro\_rate}\times \Delta t) + 0.02 \times \text{acc\_angle}
+	\]
+	
+	\section*{3. Tính sai lệch góc}
+	\[
+	\text{error} = \text{setpoint} - \text{pitch}
+	\]
+	
+	\section*{4. Tính toán PID}
+	\[
+	\text{output} = K_p \times \text{error} + K_i \times \sum \text{error} + K_d \times (\text{error} - \text{error}_{\text{trước}})
+	\]
+	
+	\section*{5. Xác định chiều quay}
+	\begin{itemize}[noitemsep]
+		\item Nếu \(\text{output} > 0\): quay \textbf{tiến}.
+		\item Nếu \(\text{output} < 0\): quay \textbf{lùi}.
+		\item Nếu \(|\text{output}| \approx 0\): \textbf{dừng}.
+	\end{itemize}
+	
+	\section*{6. Chuyển giá trị PID sang PWM}
+	\[
+	\text{speed} = \text{map}(|\text{output}|, 0, \text{MAX\_OUT}, 0, \text{PWM\_MAX})
+	\]
+	\[
+	\text{map}(x,a,b,c,d) = \frac{(x - a)(d - c)}{(b - a)} + c
+	\]
+	
+	\section*{7. Xuất điều khiển}
+	- Đặt chân IN1, IN2 theo chiều quay.  
+	- Gọi: \texttt{HAL\_TIM\_SetCompare(\&htimX, TIM\_CHANNEL\_Y, speed)}.
+	
+	\section*{8. Lặp liên tục}
+	Chu kỳ vòng lặp: 5–10 ms để robot phản ứng nhanh.
+	
+	\section*{Công thức tổng hợp}
+	\[
+	\begin{aligned}
+		\text{error} &= \text{setpoint} - \text{pitch} \\
+		\text{output} &= K_p \times \text{error} + K_i \times \sum \text{error} + K_d \times (\text{error} - \text{error}_{\text{trước}}) \\
+		\text{speed} &= \text{map}(|\text{output}|, 0, \text{MAX\_OUT}, 0, \text{PWM\_MAX})
+	\end{aligned}
+	\]
+	
+	\vspace{0.5cm}
+	\begin{flushright}
+		\textit{— Tóm tắt bởi ChatGPT —}
+	\end{flushright}
+	
+\end{document}

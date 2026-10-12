@@ -1,0 +1,25 @@
+--cpu Cortex-M3
+"mpu605+tb6612fng\main_1.o"
+"mpu605+tb6612fng\startup_stm32f103xb.o"
+"mpu605+tb6612fng\main_1.o"
+"mpu605+tb6612fng\stm32f1xx_it.o"
+"mpu605+tb6612fng\stm32f1xx_hal_msp.o"
+"mpu605+tb6612fng\stm32f1xx_hal_gpio_ex.o"
+"mpu605+tb6612fng\stm32f1xx_hal_i2c.o"
+"mpu605+tb6612fng\stm32f1xx_hal.o"
+"mpu605+tb6612fng\stm32f1xx_hal_rcc.o"
+"mpu605+tb6612fng\stm32f1xx_hal_rcc_ex.o"
+"mpu605+tb6612fng\stm32f1xx_hal_gpio.o"
+"mpu605+tb6612fng\stm32f1xx_hal_dma.o"
+"mpu605+tb6612fng\stm32f1xx_hal_cortex.o"
+"mpu605+tb6612fng\stm32f1xx_hal_pwr.o"
+"mpu605+tb6612fng\stm32f1xx_hal_flash.o"
+"mpu605+tb6612fng\stm32f1xx_hal_flash_ex.o"
+"mpu605+tb6612fng\stm32f1xx_hal_exti.o"
+"mpu605+tb6612fng\stm32f1xx_hal_tim.o"
+"mpu605+tb6612fng\stm32f1xx_hal_tim_ex.o"
+"mpu605+tb6612fng\system_stm32f1xx.o"
+--strict --scatter "MPU605+TB6612FNG\MPU605+TB6612FNG.sct"
+--summary_stderr --info summarysizes --map --load_addr_map_info --xref --callgraph --symbols
+--info sizes --info totals --info unused --info veneers
+--list "MPU605+TB6612FNG.map" -o MPU605+TB6612FNG\MPU605+TB6612FNG.axf
